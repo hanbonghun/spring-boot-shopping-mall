@@ -1,2 +1,16 @@
-package com.shop.dto;public class ItemImgDto {
+package com.shop.dto;
+
+import com.shop.entity.ItemImg;
+import org.modelmapper.ModelMapper;
+
+public class ItemImgDto {
+    private Long id;
+    private String imgName;
+    private String oriImgName;
+    private String ImgUrl;
+    private String repImgYn;
+    private static ModelMapper modelMapper = new ModelMapper();
+    public static ItemImgDto of(ItemImg itemImg){
+        return modelMapper.map(itemImg,ItemImgDto.class);
+    }
 }
